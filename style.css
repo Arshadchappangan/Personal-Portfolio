@@ -315,7 +315,7 @@ nav button#menuButton{
 
 .form-input{
     height: 40px;
-    width: 400px;
+    max-width: 100%;
     padding: 5px 20px;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -323,13 +323,14 @@ nav button#menuButton{
 }
 
 .contact #text-area{
-    width: 800px;
+    width: 100%;
 }
 
 .form-control{
     margin-top: 1.5rem;
     background-color: #deebee;
 }
+
 
 #textarea{
     height: 200px;
