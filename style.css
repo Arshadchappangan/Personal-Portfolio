@@ -308,10 +308,9 @@ nav button#menuButton{
     font-size: 16px;
 }
 
-.contact{
-    padding: 110px 85px;
+.container#contact{
+    margin: 50px auto;
 }
-
 
 .form-input{
     height: 40px;
