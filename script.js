@@ -40,19 +40,26 @@ $(document).ready(function(){
 })
 
 
+
 $("#gform").submit((e) => {
-    e.preventDefault()
-    $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbxPgOdKDtpDUYOnf9agmvklIw2StUVo_pZsKHV9mJMAHyBCwsQaIYQbifl4Z5cltjDJ/exec",
-        data: $("#gform").serialize(),
-        method: "post",
-        success: function (response) {
-            alert("Form submitted successfully")
-            window.location.reload()
-            //window.location.href="https://google.com"
-        },
-        error: function (err) {
-            alert("Something Error")
-        }
-    })
-})
+    e.preventDefault();
+    try {
+        $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbxPgOdKDtpDUYOnf9agmvklIw2StUVo_pZsKHV9mJMAHyBCwsQaIYQbifl4Z5cltjDJ/exec",
+            data: $("#gform").serialize(),
+            method: "post",
+            success: function (response) {
+                alert("Form submitted successfully");
+                window.location.reload();
+                //window.location.href="https://google.com";
+            },
+error: function (err) {
+                console.error("AJAX error:", err);
+                alert("An error occurred while submitting the form. Please try again.");
+            }
+        });
+    } catch (error) {
+        console.error("Unexpected error:", error);
+        alert("Something went wrong. Please try again later.");
+    }
+});
